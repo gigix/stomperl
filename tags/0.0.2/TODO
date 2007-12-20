@@ -1,0 +1,24 @@
+current version: 0.0.3
+
+
+== FEATURES == 
+
+
+== HOUSECLEAN ==
+add tests for tcp_stomp with stubbed socket
+fully automate acceptance tests / continuous integration
+
+
+== DEFECTS ==
+transaction is not atomic: subscribers are not guaranteed receiving all-or-not
+currently I only support "\n" as newline, not "\r\n"
+I use {packet, raw} in gen_tcp:listen, so it doesn't support telnet access
+I use c:memory(total) as seed to create random session id
+send receipt for CONNECT if the client asks for it
+
+
+== FUTURE ==
+message persistence for queues
+compatibility test fixture
+create an application (shall we?)
+implement Stomp with gen_fsm
